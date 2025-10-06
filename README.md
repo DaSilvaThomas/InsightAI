@@ -188,6 +188,6 @@ pandas>=2.0
 
 ## 👥 Auteur
 
-Thomas DA SILVA
-Université Paris 8 Vincennes - Saint-Denis 
-Master 2 Technologies de l’Hypermédia (THYP)
+- Thomas DA SILVA
+- Université Paris 8 Vincennes - Saint-Denis 
+- Master 2 Technologies de l’Hypermédia (THYP)
