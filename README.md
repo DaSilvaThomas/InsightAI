@@ -76,10 +76,7 @@ erDiagram
         int id PK
         string nom_fichier
         string type_fichier "text ou audio"
-        string chemin_fichier
         datetime date_upload
-        string format "txt, mp3, wav, etc"
-        float taille_ko
     }
     
     TEXTE {
@@ -87,8 +84,6 @@ erDiagram
         int document_id FK
         text contenu_original
         text contenu_nettoye
-        datetime date_traitement
-        boolean est_transcription
     }
     
     STATISTIQUE {
@@ -96,18 +91,12 @@ erDiagram
         int document_id FK
         int nb_mots_originaux
         int nb_mots_nettoyes
-        int nb_mots_supprimes
-        json freq_mots "top 50 mots"
-        string chemin_wordcloud
-        datetime date_calcul
     }
     
     MOT_INDEX {
         int id PK
         string mot
-        json documents_ids "liste des doc_id"
-        int frequence_totale
-        datetime date_maj
+        json documents_ids
     }
 ```
 
