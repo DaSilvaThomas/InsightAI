@@ -71,7 +71,6 @@ erDiagram
     DOCUMENT ||--o{ TEXTE : contient
     DOCUMENT ||--o{ STATISTIQUE : possede
     TEXTE ||--o{ MOT_INDEX : indexe
-    DOCUMENT ||--o{ HISTORIQUE_RECHERCHE : associe
     
     DOCUMENT {
         int id PK
@@ -109,14 +108,6 @@ erDiagram
         json documents_ids "liste des doc_id"
         int frequence_totale
         datetime date_maj
-    }
-    
-    HISTORIQUE_RECHERCHE {
-        int id PK
-        int document_id FK
-        string requete
-        datetime date_recherche
-        int nb_resultats
     }
 ```
 
