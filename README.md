@@ -171,3 +171,15 @@ pandas>=2.0
 - Thomas DA SILVA
 - Université Paris 8 Vincennes - Saint-Denis 
 - Master 2 Technologies de l’Hypermédia (THYP)
+
+Ce README a été rédigé avec l'assistance de **Claude** (Anthropic), un assistant IA qui a aidé à structurer et formaliser la documentation du projet.
+
+- **Modèle utilisé** : Claude Sonnet 4.5
+- **Date** : Octobre 2025
+- **Lien** : [Claude.ai](https://claude.ai)
+
+### Prompt initial
+
+Le projet a été défini selon le cahier des charges suivant :
+
+Le projet consiste à créer une application web complète basée sur Django, utilisant SQLite comme base de données pour stocker tous les fichiers et contenus textuels. L’interface utilisateur sera construite avec les gabarits Django pour plus de simplicité, sans passer par une API séparée. L’application permettra à l’utilisateur d’uploader des fichiers texte et audio. Les fichiers audio seront automatiquement transcrits en texte grâce à Whisper, et tous les contenus textuels, qu’ils proviennent de fichiers texte originaux ou de transcriptions audio, seront stockés dans la base de données avec un lien vers leur fichier source. Une fois le texte récupéré, il sera prétraité avec des étapes de NLP telles que la conversion en minuscules, la tokenisation, la lemmatisation, la suppression des stopwords et le calcul de statistiques comme le nombre de mots supprimés et la fréquence des mots. Ces statistiques seront visualisées dans le tableau de bord de l’interface utilisateur, sous forme de tableaux, graphiques et nuages de mots. Parallèlement, une indexation inversée sera générée, stockée dans un fichier JSON, qui permettra de relier chaque mot aux fichiers dans lesquels il apparaît. Cette indexation servira au champ de recherche de l’interface : l’utilisateur pourra effectuer des recherches booléennes simples du type “mot1 AND mot2” ou “mot1 OR mot2” pour retrouver les documents correspondants. Enfin, un chatbot basé sur GPT4All sera intégré directement dans l’interface, capable de répondre aux questions de l’utilisateur à partir du contenu textuel stocké dans la base de données. L’ensemble du projet repose uniquement sur Python et Django pour le backend et le frontend, Whisper pour la transcription audio, spaCy et NLTK pour le traitement NLP, et JSON pour l’indexation, ce qui rend l’architecture simple, fonctionnelle et adaptée à un projet académique sans besoin de ressources serveur importantes.
