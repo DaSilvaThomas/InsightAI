@@ -23,7 +23,6 @@ Cette application permet de :
 ```
 /projet_resume/
 │
-├── omeka-s/           # Installation Omeka-S
 ├── uploads/           # Fichiers uploadés
 │
 ├── index.php          # Page principale
