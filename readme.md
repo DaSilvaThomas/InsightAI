@@ -21,19 +21,15 @@ Cette application permet de :
 ## Structure du projet
 
 ```
-/projet_resume/
-│
-├── uploads/           # Fichiers uploadés
+/rAIsume
 │
 ├── index.php          # Page principale
 ├── upload.php         # Gestion des uploads
 ├── resume.php         # Génération des résumés
+├── readme.md
 │
-├── js/
-│   └── main.js        # Logique front-end
-│
-└── css/
-    └── style.css      # Styles
+└── js/
+    └── script.js      # Logique front-end
 ```
 
 ## Fonctionnement
@@ -50,12 +46,6 @@ Cette application permet de :
 - Serveur web (Apache/Nginx)
 - Omeka-S installé et configuré
 - Ollama installé localement
-
-### Configuration
-1. Cloner le projet
-2. Configurer Omeka-S et noter l'URL de l'API
-3. Configurer les clés API dans les fichiers PHP
-4. Lancer Ollama en local
 
 ## Métadonnées RDF
 
