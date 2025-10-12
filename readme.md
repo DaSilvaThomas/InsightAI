@@ -67,7 +67,7 @@ Chaque document possède des métadonnées Dublin Core :
 
 Export possible en format Turtle (.ttl) via Omeka-S.
 
-## 🗄️ Modèle de données (Diagramme Entité-Relation)
+## Modèle de données (Diagramme Entité-Relation)
 
 ```mermaid
 erDiagram
