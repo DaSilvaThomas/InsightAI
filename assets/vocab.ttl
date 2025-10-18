@@ -2,60 +2,26 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 
-ra: a owl:Ontology ;
+ra: a rdf:Property ;  # Ontologie
   dcterms:title "rAIsume vocabulary" ;
   dcterms:creator "Thomas DA SILVA" .
 
 # Classes
-ra:Document a rdfs:Class ;
-  rdfs:label "Document" ;
-  rdfs:comment "Fichier uploadé." .
-
-ra:Text a rdfs:Class ;
-  rdfs:label "Text" ;
-  rdfs:comment "Contenu textuel extrait d'un document." .
-
-ra:Summary a rdfs:Class ;
-  rdfs:label "Summary" ;
-  rdfs:comment "Résumé généré automatiquement." .
+ra:Document a rdfs:Class .
+ra:Text a rdfs:Class .
+ra:Summary a rdfs:Class .
 
 # Propriétés
-ra:hasText a rdf:Property ;
-  rdfs:label "hasText" ;
-  rdfs:domain ra:Document ;
-  rdfs:range ra:Text .
+ra:hasText a rdf:Property ; rdfs:domain ra:Document ; rdfs:range ra:Text .
+ra:hasSummary a rdf:Property ; rdfs:domain ra:Document ; rdfs:range ra:Summary .
+ra:generatedBy a rdf:Property ; rdfs:domain ra:Summary ; rdfs:range rdfs:Literal .
+ra:summaryDate a rdf:Property ; rdfs:domain ra:Summary ; rdfs:range xsd:dateTime .
+ra:sourceFile a rdf:Property ; rdfs:domain ra:Document ; rdfs:range rdfs:Literal .
+ra:language a rdf:Property ; rdfs:domain ra:Document, ra:Text, ra:Summary ; rdfs:range rdfs:Literal .
 
-ra:hasSummary a rdf:Property ;
-  rdfs:label "hasSummary" ;
-  rdfs:domain ra:Document ;
-  rdfs:range ra:Summary .
-
-ra:generatedBy a rdf:Property ;
-  rdfs:label "generatedBy" ;
-  rdfs:domain ra:Summary ;
-  rdfs:range rdfs:Literal ;
-  rdfs:comment "Ollama (Mistral AI)." .
-
-ra:summaryDate a rdf:Property ;
-  rdfs:label "summaryDate" ;
-  rdfs:domain ra:Summary ;
-  rdfs:range xsd:dateTime .
-
-ra:sourceFile a rdf:Property ;
-  rdfs:label "sourceFile" ;
-  rdfs:domain ra:Document ;
-  rdfs:range rdfs:Literal ;
-  rdfs:comment "Chemin du fichier uploadé." .
-
-ra:language a rdf:Property ;
-  rdfs:label "language" ;
-  rdfs:domain ra:Document, ra:Text, ra:Summary ;
-  rdfs:range rdfs:Literal .
-
-# Dublin Core mappings (utiles)
-ra:dc_title a rdf:Property ; rdfs:label "title" ; rdfs:subPropertyOf dcterms:title .
-ra:dc_creator a rdf:Property ; rdfs:label "creator" ; rdfs:subPropertyOf dcterms:creator .
-ra:dc_description a rdf:Property ; rdfs:label "description" ; rdfs:subPropertyOf dcterms:description .
+# Dublin Core minimal
+ra:dc_title a rdf:Property ; rdfs:subPropertyOf dcterms:title .
+ra:dc_creator a rdf:Property ; rdfs:subPropertyOf dcterms:creator .
+ra:dc_description a rdf:Property ; rdfs:subPropertyOf dcterms:description .
